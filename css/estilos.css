@@ -158,6 +158,8 @@ footer {
     font-size: 1.5rem; }
     .mainPage .titulo h3 {
       text-align: justify; }
+  .mainPage .nosotros {
+    font-size: 20px; }
 
 .btn, .btnCompra, .botonEnviar {
   display: flex;
