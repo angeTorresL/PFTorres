@@ -1,40 +1,64 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&family=Poppins:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+/*------------- VARIABLES ------------*/
+$imagenFondo:url(../img/fondoMadera2.jpg);
+$fontFamilyGeneral:'Poppins', sans-serif;
+$fontFamilyHome:'Poppins', sans-serif; 
+$fontFamilyBienvenida:"Ms Madi", cursive; 
+
+@mixin displayColumnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin displayRowCenter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin configImagenesFondo {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /*------------- GLOBALES ------------*/
 *{
     margin: 0;
-    padding: 0;
-   
+    padding: 0;   
+    box-sizing: border-box;
 }
 
 /*------------- header global ------------*/
-
 
 /*titulo principal de la pagina*/
 header {
     grid-area: header;
     background-color: #000000; 
-}
-header .logo-mobile {
-    display: flex;
-    justify-content: center; 
-}
+    .logo-mobile {
+        display: flex;
+        justify-content: center;
+    }
 
-header .menu ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-    
-    font-size: 1rem;
-    gap: 15px;
-    margin-top: 5px;
-    border-radius: 20px; 
-}
-
-header .menu ul .logo-tablet {
-        display: none; 
+    .menu ul {
+        @include displayColumnCenter;        
+        font-size: 1rem;
+        gap: 15px;
+        margin-top: 5px;
+        border-radius: 20px; 
+        .logo-tablet {
+            display: none; 
+        }
+    }
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
@@ -50,50 +74,41 @@ header .menu ul .logo-tablet {
     height: 34px;
     background-color:white;
     border:none;
+    .line{
+        width: 100%;
+        float: left;
+        height: 2px;
+        background-color: #fff;
+        margin-bottom: 5px;
+    }
 }
 
-.navbar-toggler .line{
-    width: 100%;
-    float: left;
-    height: 2px;
-    background-color: #fff;
-    margin-bottom: 5px;
-}
-
-
-  *body {
+*body {
     background-color: #ffc10757;
     width: 100%;
     height: 100vh;
-    font-family: "Cabin Condensed", sans-serif;   
+    font-family: $fontFamilyGeneral;  
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "header"
    "main"
    "footer";
   
-    }
+}
   
 /*------------- footer global ------------*/
 footer{
     background-color:#000000; 
-  
-}
-
-footer nav {
-    padding: 15px 0 20px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10%;
-}
-
-footer ul{
-    list-style: none;
-    text-align: justify;
+    nav {
+        padding: 15px 0 20px 0;
+        width: 100%;
+        @include displayRowCenter;
+        gap: 10%;
+    }
+    ul{
+        list-style: none;
+        text-align: justify;
+    }
 }
 
  .infoDeContacto{
@@ -103,20 +118,6 @@ footer ul{
 
 /*-------------Pagina Index-----------------*/
 
-.home {
-    margin: 10%;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;    
-}
-
-.home .nosotros{
-    margin: 10%;
-    text-align: justify;
-}
-
-.nosotros h1{
-    text-align: center;
-}
 
 .text p{
     color: white;
@@ -133,119 +134,99 @@ footer ul{
 
 }
   
-.mainInicio .bienvenida {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../img/productos/scones\ de\ queso.jpeg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.mainInicio .bienvenida {    
+    @include displayColumnCenter;    
+    background-image:url("../img/productos/scones\ de\ queso.jpeg");
+    @include configImagenesFondo;
     height: 100vh; 
+    .contenedor {        
+        width: 80%; 
+        text-align: center;
+        h1 {
+            font-family: $fontFamilyBienvenida;
+            font-size: 4rem;
+            text-shadow: 2px 0px 0px beige, 0px 2px 0px beige, -2px 0px 0px beige, 0px -2px 0px beige;
+            text-decoration: none;           
+        }
+        p {
+            font-weight: bold;
+            font-size: 25px;
+            color: beige;
+            text-shadow: 2px 0px 0px black, 0px 2px 0px black, -2px 0px 0px black, 0px -2px 0px black;
+        }
+    }
 }
-
-.mainInicio .bienvenida .contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%; 
-}
-
-.mainInicio .bienvenida .contenedor h1 {
-    font-family: "Ms Madi", cursive;
-    font-size: 4rem;
-    text-shadow: 2px 0px 0px beige, 0px 2px 0px beige, -2px 0px 0px beige, 0px -2px 0px beige;
-    text-decoration: none; 
-}
-
-.mainInicio .bienvenida .contenedor p {
-        font-weight: bold;
-        font-size: 25px;
-        color: beige;
-        text-shadow: 2px 0px 0px black, 0px 2px 0px black, -2px 0px 0px black, 0px -2px 0px black;
-}
-        
   
  /* info nosotros en index*/
 
  .mainInicio .nosotros .contenedorNosotros {
     background-color: #ffc10757;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include displayColumnCenter;
     margin: 0px;
     padding: 2rem 0;
+    img {
+        width: 95%; 
+    }
+    .descripcionNosotros p {
+        font-size: 1.2rem;
+        text-align: justify; 
+        margin-left: 50px;
+        margin-right: 50px;
+  }
 }
-.mainInicio .nosotros .contenedorNosotros img {
-      width: 95%; 
-}
-.mainInicio .nosotros .contenedorNosotros .descripcionNosotros p {
-      font-size: 1.2rem;
-      text-align: justify; 
-      margin-left: 50px;
-      margin-right: 50px;
-}
-   
  /* info productos en index*/
 
-.mainInicio .productosMobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.mainInicio .productosMobile {    
+    @include displayColumnCenter;
     background-color: #fff1c6;  
     gap: 2rem;
     padding: 2rem; 
-}
-.mainInicio .productosMobile h2 {
-      padding-top: 1rem 0;
-      font-size: 2.2rem; 
-}
-.mainInicio .productosMobile p {
-      text-align: justify; 
-}
-.mainInicio .productosMobile .carousel {
-      width: 89%; 
+    h2 {
+        padding-top: 1rem 0;
+        font-size: 2.2rem; 
+    }
+    p {
+        text-align: justify; 
+    }
+    .carousel {
+        width: 89%; 
+    }
 }
 
 .mainPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include displayColumnCenter;
     gap: 1rem;
     padding: 1rem; 
+    .titulo{
+        padding: 4rem;
+        text-align: center;
+        font-family: $fontFamilyHome;
+        font-size: 1.5rem;
+        h3{
+            text-align: justify;           
+        }   
+    }
 }
 
-
-.mainPage .titulo{
-    padding: 4rem;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;    
-}
-
-.mainPage .titulo h3{
-   
-    text-align: justify;
-    font-family: 'Poppins', sans-serif;    
-}
-
-.btnCompra {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffc10726;
-    border-radius: 8px;
-    border-color: #ffc107;
+.btn {
+    @include displayRowCenter;   
+    border-radius: 8px;   
     padding: 5px;
     margin: 10px;
 }
 
+.btnCompra {    
+    @extend .btn;
+    background-color: #ffc10726;   
+    border-color: #ffc107;    
+}
+
+.botonEnviar{
+    @extend .btn;
+    background-color: #ffffff26;   
+    border-color: #09080726; 
+    width: 30%;
+}
 
 /****************************************************************************************************/
 
@@ -270,28 +251,23 @@ p input{
     border-radius: 10px;
     margin: 10%;
     background-color: rgb(255, 255, 255); 
+    font-size: 20px;
+    h2{
+        padding: 10px;
+        text-align: center;
+    }
+    .ingredientes {
+        padding: 20px;
+        @include displayColumnCenter;
+        gap: 67px;
+        img{
+            border-style: double;
+            border-color: #000000;
+            margin: 0%;
+        }        
+    }
 }
 
-.receta1 h2{
-    padding: 10px;
-    text-align: center;
-}
-.ingredientes{
-    padding: 20px;
-}
-.ingredientes img{
-    border-style: double;
-    border-color: #000000;
-    margin: 0%;
-
-}
-.receta1 .ingredientes {
-    flex-direction: column;
-        justify-content: center;        
-        align-items: center;
-    gap: 67px;
-    
-}
 .pasoApaso{
     padding: 30px;   
 
@@ -303,24 +279,19 @@ p input{
     border-radius: 10px;
     margin: auto;
     background-color: rgb(255, 255, 255); 
+    h2{
+        text-align: center;
+        padding: 25px;
+     }
+     iframe {   
+        width: 253px;
+        height: 180px;
+    }
 }
-
-.videos h2{
-   text-align: center;
-   padding: 25px;
-}
-
 .iframes{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
+    @include displayColumnCenter; 
     gap: 3rem; 
-}
-
-.videos iframe {   
-    width: 253px;
-    height: 180px;
+    padding: 20px;
 }
 
 
@@ -331,29 +302,23 @@ p input{
 @media screen and (min-width: 768px) {
     /*menu tablet */
     header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;        
-        align-items: center; 
-    }
-
-    header .logo-mobile {
-        display: none; 
-    }
-    header .menu ul {
-        font-size: 1.2rem;
-        background-color: #000000;
-        margin-top: 0;
-    }
-    
-    header .menu ul .logo-tablet {
-        display: initial; 
-    }
-
-    header .menu ul li {
-        display: flex;
-        align-items: center;
-        height: fit-content; 
+        @include displayColumnCenter;
+        .logo-mobile {
+            display: none; 
+        }
+        .menu ul {
+            font-size: 1.2rem;
+            background-color: #000000;
+            margin-top: 0;
+            li {
+                display: flex;
+                align-items: center;
+                height: fit-content; 
+            }
+            .logo-tablet {
+                display: initial; 
+            }
+        }
     }
 
     .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
@@ -369,23 +334,20 @@ p input{
         height: 34px;
         background-color:white;
         border:none;
+        .line{
+            width: 100%;
+            float: left;
+            height: 2px;
+            background-color: white;
+            margin-bottom: 5px;
+        }
     }
     
-    .navbar-toggler .line{
-        width: 100%;
-        float: left;
-        height: 2px;
-        background-color: white;
-        margin-bottom: 5px;
-    }
-   
-
     .mainInicio .productosMobile {
         display: none; 
-    }
-    
-    .mainInicio .productosMobile .carousel {
-          display: none; 
+        .carousel {
+            display: none; 
+      }
     }
     
   .mainInicio #galeria {
@@ -396,92 +358,80 @@ p input{
 
     .mainInicio .nosotros .descripcionNosotros {
           width: 70%; 
+          p {
+            font-size: 1.4rem; 
+        }
     }
-    .mainInicio .nosotros .descripcionNosotros p {
-        font-size: 1.4rem; 
-    }
-
-
+   
      /* info productos en index*/ 
       
-    .mainInicio .productos {       
-        grid-area: productos;
-        padding: 2rem 0; 
-    }
-    .mainInicio .productos .imagenesInicioProductos {
-        background-color: #fff1c6;       
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem; 
-    }
-    
-    .mainInicio .productos .containerProductos .tituloProductos {   
-          
-        text-align: center;        
-    }
+    .mainInicio{
+        .productos {       
+                grid-area: productos;
+                padding: 2rem 0; 
+                .imagenesInicioProductos {
+                    background-color: #fff1c6;       
+                    @include displayColumnCenter;
+                    gap: 3rem; 
+                }
+                .containerProductos .tituloProductos {  
+                    text-align: center;        
+                }
+        }
+        .imagenesInicioProductos img {
+            border: 6px double;
+            border-color:#000000;
+            border-style: double;
+            width: 230px;
+            height: 270px;      
+        }
 
-    .mainInicio .imagenesInicioProductos img {
-        border: 6px double;
-        border-color:#000000;
-        border-style: double;
-        width: 230px;
-        height: 270px;      
     }
-    
-    .mainInicio .imagenesInicioProductos h3 {
-        font-style: italic;
-        font-weight: 500; 
-    }
-
     .imagenes{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+        @include displayRowCenter;
         gap: 3rem; 
     }
 
     /*pagina de recetas */
-  .mainPage .sectionPage {
-    margin: 20px; }
-    .receta1 .ingredientes {
-        display: flex;
-        flex-direction: row;
-        gap: 67px;
+    .mainPage .sectionPage {
+        margin: 20px; 
     }
-
-    .ingredientes img {
+    .receta1{
         margin: 0%;
-    }
-    .receta1 {        
-        margin: 0%;
-    }
+        .ingredientes {
+            display: flex;
+            flex-direction: row;
+            gap: 67px;
+            img {
+                margin: 0%;
+            }
+        }
 
-    .iframes{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;       
-        gap: 3rem; 
-    }
+    }   
 
     .videos iframe {   
         width: 353px;
         height: 280px;
     } 
+
 }
 
 /*------------Pagina Contacto-----------*/
 
 .contacto{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;   
+    background-image:$imagenFondo;
+    @include configImagenesFondo;
+    @include displayColumnCenter;  
     gap: 17px;
+    .home {
+        font-size:10px;
+        margin: 5%;
+        text-align: center;
+        font-family: $fontFamilyHome; 
+        h3{
+            text-align: justify;
+        } 
+    }
 }
 
 legend{
@@ -496,87 +446,59 @@ legend{
 .formContacto{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     color: black;
     font-size:20px;
-    gap: 25px;
-    padding: 10px;    
+    padding: 10px;
     margin-bottom: 10%;
+    font-family:$fontFamilyHome;  
+        label{
+            padding: 10px;
+        }
 }
 p input{
     text-align: left;
 }
 
-.botonEnviar{
-    background-color: #c9c6c7;
-    border-color: #000000;
-    width: 100px;
-    font-weight: bold;
-    align-items: center;
-    width: 105px;
-    height: 30px;
-    text-align: center;
-}
+
 
 /*------------Pagina Productos-----------*/
 
 .mainPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../img/fondoMadera2.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
+    @include displayColumnCenter;
+    background-image:$imagenFondo;
+    @include configImagenesFondo;
+    section{
+        margin:0 5% 5% 5%;
+        @include displayRowCenter;
+        gap: 5rem;
+    }
     
 }
 
-.mainPage section{
-    margin:0 5% 5% 5%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-}
-
 .sectionProductos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include displayColumnCenter;
     margin: 5px;
     width: 40%;   
     border-radius: 10px;
     background-color: rgb(251, 253, 255);
     padding: 20px;
     border: solid 4px;
+    img{
+        width: 90%;
+        height: 85%;
+        padding: 10px;
+    }
+    .compra {        
+        gap: 5px;
+        width: fit-content;
+        background-color: #ffeaed;
+        border-radius: 8px;
+        border-color: #ea899a;
+        padding: 0 5px;
+    }   
     
 }
-.sectionProductos img{
-    width: 90%;
-    height: 85%;
-    padding: 10px;
-}
-
-.sectionProductos .compra {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: fit-content;
-    background-color: #ffeaed;
-    border-radius: 8px;
-    border-color: #ea899a;
-    padding: 0 5px;
-}
-
-  
-
 
 /*-----------------------------------------------------------------------------*/
 
@@ -610,54 +532,40 @@ p input{
     grid-template-areas: "bienvenida bienvenida"
    "nosotros nosotros"   
    "productos productos"; 
-}
-.mainInicio .bienvenida {
+   .bienvenida {
         height: 100vh; 
+    }
+    .imagenesInicio img {
+        transition: all 1s; 
+        :hover {
+            opacity: 0.7; 
+        }
+    }
 }
 
-.mainInicio .imagenesInicio img {
-    transition: all 1s; 
-}
-.mainInicio .imagenesInicio img:hover {
-    opacity: 0.7; 
-}
-
-.mainPage .tituloPage p {
-      text-align: center; 
-}
+.mainPage{
+    .tituloPage p {
+        text-align: center; 
+    }
+    section{
+        margin-left: 20%;
+        margin-right: 20%;  
+        @include displayRowCenter;
+        gap: 5rem;
+    }
+} 
     
-.mainPage section{
-    margin-left: 20%;
-    margin-right: 20%;  
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-}
-
   /*pagina de productos y recetas tablet*/
  
     .receta1{
         max-height: 800px;
-        max-width: 800px;
+        max-width: 800px;       
+        .ingredientes {
+            display: flex;
+            flex-direction: row;
+            gap: 67px;
+        }
     }
-
-    .receta1 .ingredientes {
-        display: flex;
-        flex-direction: row;
-        gap: 67px;
-    }
-
-    .iframes{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;       
-        gap: 3rem; 
-    }
-
     .videos iframe {   
         width: 453px;
         height: 380px;
@@ -668,18 +576,10 @@ p input{
 
 /******************************************************************************************************************************************/
 
-body {
-  font-size: 16px;
-  font-family: 'Raleway', sans-serif;
-}
-
 .imagenesInicioProductos {
   padding: 1em 0;
   float: left;
   width: 100%;
-}
-
-.imagenesInicioProductos {
   color: #1a1a1a;
   text-align: center;
   margin-bottom: 10px;
@@ -689,10 +589,8 @@ body {
   position: relative;
   text-align: center; 
   max-width: 400px;
-  margin: auto;
- 
+  margin: auto; 
 }
-
 
 .content:hover .content-overlay {
   opacity: 1;
@@ -702,7 +600,7 @@ body {
     padding-left: 1em;
     padding-right: 1em;
     color: #000000;
-    font-family: "Ms Madi", cursive;
+    font-family: $fontFamilyBienvenida;
     font-size: 2rem;
     text-shadow: 2px 0px 0px beige, 0px 2px 0px beige, -2px 0px 0px beige, 0px -2px 0px beige;
     text-decoration: none; 
@@ -745,13 +643,11 @@ body {
   letter-spacing: 0.15em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
+  p {
+    color: #fff;
+    font-size: 0.8em;
+  }
 }
-
-.content-details p {
-  color: #fff;
-  font-size: 0.8em;
-}
-
 .fadeIn-bottom {
   top: 80%;
 }

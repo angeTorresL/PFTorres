@@ -1,32 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Pompiere&family=Poppins:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+/*------------- VARIABLES ------------*/
 /*------------- GLOBALES ------------*/
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
 
 /*------------- header global ------------*/
 /*titulo principal de la pagina*/
 header {
   grid-area: header;
   background-color: #000000; }
-
-header .logo-mobile {
-  display: flex;
-  justify-content: center; }
-
-header .menu ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  gap: 15px;
-  margin-top: 5px;
-  border-radius: 20px; }
-
-header .menu ul .logo-tablet {
-  display: none; }
+  header .logo-mobile {
+    display: flex;
+    justify-content: center; }
+  header .menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    gap: 15px;
+    margin-top: 5px;
+    border-radius: 20px; }
+    header .menu ul .logo-tablet {
+      display: none; }
 
 .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
   color: white;
@@ -39,19 +38,18 @@ header .menu ul .logo-tablet {
   height: 34px;
   background-color: white;
   border: none; }
-
-.navbar-toggler .line {
-  width: 100%;
-  float: left;
-  height: 2px;
-  background-color: #fff;
-  margin-bottom: 5px; }
+  .navbar-toggler .line {
+    width: 100%;
+    float: left;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 5px; }
 
 *body {
   background-color: #ffc10757;
   width: 100%;
   height: 100vh;
-  font-family: "Cabin Condensed", sans-serif;
+  font-family: "Poppins", sans-serif;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "header" "main" "footer"; }
@@ -59,38 +57,24 @@ header .menu ul .logo-tablet {
 /*------------- footer global ------------*/
 footer {
   background-color: #000000; }
-
-footer nav {
-  padding: 15px 0 20px 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10%; }
-
-footer ul {
-  list-style: none;
-  text-align: justify; }
+  footer nav {
+    padding: 15px 0 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10%; }
+  footer ul {
+    list-style: none;
+    text-align: justify; }
 
 .infoDeContacto {
   color: white;
   text-decoration: none; }
 
 /*-------------Pagina Index-----------------*/
-.home {
-  margin: 10%;
-  text-align: center;
-  font-family: 'Poppins', sans-serif; }
-
-.home .nosotros {
-  margin: 10%;
-  text-align: justify; }
-
-.nosotros h1 {
-  text-align: center; }
-
 .text p {
   color: white; }
 
@@ -112,25 +96,19 @@ footer ul {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh; }
-
-.mainInicio .bienvenida .contenedor {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%; }
-
-.mainInicio .bienvenida .contenedor h1 {
-  font-family: "Ms Madi", cursive;
-  font-size: 4rem;
-  text-shadow: 2px 0px 0px beige, 0px 2px 0px beige, -2px 0px 0px beige, 0px -2px 0px beige;
-  text-decoration: none; }
-
-.mainInicio .bienvenida .contenedor p {
-  font-weight: bold;
-  font-size: 25px;
-  color: beige;
-  text-shadow: 2px 0px 0px black, 0px 2px 0px black, -2px 0px 0px black, 0px -2px 0px black; }
+  .mainInicio .bienvenida .contenedor {
+    width: 80%;
+    text-align: center; }
+    .mainInicio .bienvenida .contenedor h1 {
+      font-family: "Ms Madi", cursive;
+      font-size: 4rem;
+      text-shadow: 2px 0px 0px beige, 0px 2px 0px beige, -2px 0px 0px beige, 0px -2px 0px beige;
+      text-decoration: none; }
+    .mainInicio .bienvenida .contenedor p {
+      font-weight: bold;
+      font-size: 25px;
+      color: beige;
+      text-shadow: 2px 0px 0px black, 0px 2px 0px black, -2px 0px 0px black, 0px -2px 0px black; }
 
 /* info nosotros en index*/
 .mainInicio .nosotros .contenedorNosotros {
@@ -141,15 +119,13 @@ footer ul {
   align-items: center;
   margin: 0px;
   padding: 2rem 0; }
-
-.mainInicio .nosotros .contenedorNosotros img {
-  width: 95%; }
-
-.mainInicio .nosotros .contenedorNosotros .descripcionNosotros p {
-  font-size: 1.2rem;
-  text-align: justify;
-  margin-left: 50px;
-  margin-right: 50px; }
+  .mainInicio .nosotros .contenedorNosotros img {
+    width: 95%; }
+  .mainInicio .nosotros .contenedorNosotros .descripcionNosotros p {
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-left: 50px;
+    margin-right: 50px; }
 
 /* info productos en index*/
 .mainInicio .productosMobile {
@@ -160,16 +136,13 @@ footer ul {
   background-color: #fff1c6;
   gap: 2rem;
   padding: 2rem; }
-
-.mainInicio .productosMobile h2 {
-  padding-top: 1rem 0;
-  font-size: 2.2rem; }
-
-.mainInicio .productosMobile p {
-  text-align: justify; }
-
-.mainInicio .productosMobile .carousel {
-  width: 89%; }
+  .mainInicio .productosMobile h2 {
+    padding-top: 1rem 0;
+    font-size: 2.2rem; }
+  .mainInicio .productosMobile p {
+    text-align: justify; }
+  .mainInicio .productosMobile .carousel {
+    width: 89%; }
 
 .mainPage {
   display: flex;
@@ -178,26 +151,32 @@ footer ul {
   align-items: center;
   gap: 1rem;
   padding: 1rem; }
+  .mainPage .titulo {
+    padding: 4rem;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem; }
+    .mainPage .titulo h3 {
+      text-align: justify; }
 
-.mainPage .titulo {
-  padding: 4rem;
-  text-align: center;
-  font-family: 'Poppins', sans-serif; }
-
-.mainPage .titulo h3 {
-  text-align: justify;
-  font-family: 'Poppins', sans-serif; }
-
-.btnCompra {
+.btn, .btnCompra, .botonEnviar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #ffc10726;
   border-radius: 8px;
-  border-color: #ffc107;
   padding: 5px;
   margin: 10px; }
+
+.btnCompra {
+  background-color: #ffc10726;
+  border-color: #ffc107; }
+
+.botonEnviar {
+  background-color: #ffffff26;
+  border-color: #09080726;
+  width: 30%; }
 
 /****************************************************************************************************/
 /*------------Pagina Recetas-----------*/
@@ -218,25 +197,22 @@ p input {
   border: solid 4px;
   border-radius: 10px;
   margin: 10%;
-  background-color: white; }
-
-.receta1 h2 {
-  padding: 10px;
-  text-align: center; }
-
-.ingredientes {
-  padding: 20px; }
-
-.ingredientes img {
-  border-style: double;
-  border-color: #000000;
-  margin: 0%; }
-
-.receta1 .ingredientes {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 67px; }
+  background-color: white;
+  font-size: 20px; }
+  .receta1 h2 {
+    padding: 10px;
+    text-align: center; }
+  .receta1 .ingredientes {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 67px; }
+    .receta1 .ingredientes img {
+      border-style: double;
+      border-color: #000000;
+      margin: 0%; }
 
 .pasoApaso {
   padding: 30px; }
@@ -247,21 +223,20 @@ p input {
   border-radius: 10px;
   margin: auto;
   background-color: white; }
-
-.videos h2 {
-  text-align: center;
-  padding: 25px; }
+  .videos h2 {
+    text-align: center;
+    padding: 25px; }
+  .videos iframe {
+    width: 253px;
+    height: 180px; }
 
 .iframes {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem; }
-
-.videos iframe {
-  width: 253px;
-  height: 180px; }
+  gap: 3rem;
+  padding: 20px; }
 
 /***************************************************************************************************************/
 /* vista para tablet/ordenador del index*/
@@ -272,18 +247,18 @@ p input {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-  header .logo-mobile {
-    display: none; }
-  header .menu ul {
-    font-size: 1.2rem;
-    background-color: #000000;
-    margin-top: 0; }
-  header .menu ul .logo-tablet {
-    display: initial; }
-  header .menu ul li {
-    display: flex;
-    align-items: center;
-    height: fit-content; }
+    header .logo-mobile {
+      display: none; }
+    header .menu ul {
+      font-size: 1.2rem;
+      background-color: #000000;
+      margin-top: 0; }
+      header .menu ul li {
+        display: flex;
+        align-items: center;
+        height: fit-content; }
+      header .menu ul .logo-tablet {
+        display: initial; }
   .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
     color: white;
     font-size: 25px;
@@ -294,80 +269,83 @@ p input {
     height: 34px;
     background-color: white;
     border: none; }
-  .navbar-toggler .line {
-    width: 100%;
-    float: left;
-    height: 2px;
-    background-color: white;
-    margin-bottom: 5px; }
+    .navbar-toggler .line {
+      width: 100%;
+      float: left;
+      height: 2px;
+      background-color: white;
+      margin-bottom: 5px; }
   .mainInicio .productosMobile {
     display: none; }
-  .mainInicio .productosMobile .carousel {
-    display: none; }
+    .mainInicio .productosMobile .carousel {
+      display: none; }
   .mainInicio #galeria {
     display: initial; }
   /* info nosotros en index*/
   .mainInicio .nosotros .descripcionNosotros {
     width: 70%; }
-  .mainInicio .nosotros .descripcionNosotros p {
-    font-size: 1.4rem; }
+    .mainInicio .nosotros .descripcionNosotros p {
+      font-size: 1.4rem; }
   /* info productos en index*/
   .mainInicio .productos {
     grid-area: productos;
     padding: 2rem 0; }
-  .mainInicio .productos .imagenesInicioProductos {
-    background-color: #fff1c6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem; }
-  .mainInicio .productos .containerProductos .tituloProductos {
-    text-align: center; }
+    .mainInicio .productos .imagenesInicioProductos {
+      background-color: #fff1c6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem; }
+    .mainInicio .productos .containerProductos .tituloProductos {
+      text-align: center; }
   .mainInicio .imagenesInicioProductos img {
     border: 6px double;
     border-color: #000000;
     border-style: double;
     width: 230px;
     height: 270px; }
-  .mainInicio .imagenesInicioProductos h3 {
-    font-style: italic;
-    font-weight: 500; }
   .imagenes {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 3rem; }
   /*pagina de recetas */
   .mainPage .sectionPage {
     margin: 20px; }
-  .receta1 .ingredientes {
-    display: flex;
-    flex-direction: row;
-    gap: 67px; }
-  .ingredientes img {
-    margin: 0%; }
   .receta1 {
     margin: 0%; }
-  .iframes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem; }
+    .receta1 .ingredientes {
+      display: flex;
+      flex-direction: row;
+      gap: 67px; }
+      .receta1 .ingredientes img {
+        margin: 0%; }
   .videos iframe {
     width: 353px;
     height: 280px; } }
 
 /*------------Pagina Contacto-----------*/
 .contacto {
+  background-image: url(../img/fondoMadera2.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 17px; }
+  .contacto .home {
+    font-size: 10px;
+    margin: 5%;
+    text-align: center;
+    font-family: "Poppins", sans-serif; }
+    .contacto .home h3 {
+      text-align: justify; }
 
 legend {
   float: left;
@@ -380,25 +358,17 @@ legend {
 .formContacto {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   color: black;
   font-size: 20px;
-  gap: 25px;
   padding: 10px;
-  margin-bottom: 10%; }
+  margin-bottom: 10%;
+  font-family: "Poppins", sans-serif; }
+  .formContacto label {
+    padding: 10px; }
 
 p input {
   text-align: left; }
-
-.botonEnviar {
-  background-color: #c9c6c7;
-  border-color: #000000;
-  width: 100px;
-  font-weight: bold;
-  align-items: center;
-  width: 105px;
-  height: 30px;
-  text-align: center; }
 
 /*------------Pagina Productos-----------*/
 .mainPage {
@@ -409,17 +379,16 @@ p input {
   background-image: url(../img/fondoMadera2.jpg);
   background-attachment: fixed;
   background-size: cover;
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat; }
-
-.mainPage section {
-  margin: 0 5% 5% 5%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem; }
+  .mainPage section {
+    margin: 0 5% 5% 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem; }
 
 .sectionProductos {
   display: flex;
@@ -432,23 +401,17 @@ p input {
   background-color: #fbfdff;
   padding: 20px;
   border: solid 4px; }
-
-.sectionProductos img {
-  width: 90%;
-  height: 85%;
-  padding: 10px; }
-
-.sectionProductos .compra {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: fit-content;
-  background-color: #ffeaed;
-  border-radius: 8px;
-  border-color: #ea899a;
-  padding: 0 5px; }
+  .sectionProductos img {
+    width: 90%;
+    height: 85%;
+    padding: 10px; }
+  .sectionProductos .compra {
+    gap: 5px;
+    width: fit-content;
+    background-color: #ffeaed;
+    border-radius: 8px;
+    border-color: #ea899a;
+    padding: 0 5px; }
 
 /*-----------------------------------------------------------------------------*/
 /* desktop */
@@ -475,12 +438,12 @@ p input {
   .mainInicio {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "bienvenida bienvenida" "nosotros nosotros"    "productos productos"; }
-  .mainInicio .bienvenida {
-    height: 100vh; }
-  .mainInicio .imagenesInicio img {
-    transition: all 1s; }
-  .mainInicio .imagenesInicio img:hover {
-    opacity: 0.7; }
+    .mainInicio .bienvenida {
+      height: 100vh; }
+    .mainInicio .imagenesInicio img {
+      transition: all 1s; }
+      .mainInicio .imagenesInicio img :hover {
+        opacity: 0.7; }
   .mainPage .tituloPage p {
     text-align: center; }
   .mainPage section {
@@ -496,31 +459,19 @@ p input {
   .receta1 {
     max-height: 800px;
     max-width: 800px; }
-  .receta1 .ingredientes {
-    display: flex;
-    flex-direction: row;
-    gap: 67px; }
-  .iframes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem; }
+    .receta1 .ingredientes {
+      display: flex;
+      flex-direction: row;
+      gap: 67px; }
   .videos iframe {
     width: 453px;
     height: 380px; } }
 
 /******************************************************************************************************************************************/
-body {
-  font-size: 16px;
-  font-family: 'Raleway', sans-serif; }
-
 .imagenesInicioProductos {
   padding: 1em 0;
   float: left;
-  width: 100%; }
-
-.imagenesInicioProductos {
+  width: 100%;
   color: #1a1a1a;
   text-align: center;
   margin-bottom: 10px; }
@@ -576,10 +527,9 @@ body {
   letter-spacing: 0.15em;
   margin-bottom: 0.5em;
   text-transform: uppercase; }
-
-.content-details p {
-  color: #fff;
-  font-size: 0.8em; }
+  .content-details h3 p {
+    color: #fff;
+    font-size: 0.8em; }
 
 .fadeIn-bottom {
   top: 80%; }

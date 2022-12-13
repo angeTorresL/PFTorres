@@ -4,7 +4,17 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto | Blansé Pasteleria</title>
+    <meta name="keywords" content="blansé, pasteleria, formulario, contacto">
+    <meta name="description" content="Dejanos tus dudas y/o sugerencias y nos contactaremos a la brevedad posible."> 
+    <meta name="author" content="AngelaTL">
+
+    <meta property="og:title" content="Formulario de contacto Blansé Pasteleria">
+    <meta property="og:site_name" content="Nosotros | Blansé Pasteleria">
+    <meta property="og:url" content="https://angetorresl.github.io/PreEntrega2Torres/pages/contacto.html">
+    <meta property="og:description" content="Formulario de contacto de Blansé Pasteleria.">
+    
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />        
@@ -46,33 +56,36 @@
         </nav>      
     </header>
     <!-- Inicio main de contacto  -->
-    <main class="contacto">
-        <div class="home">            
-            <h1>Contacto</h1>
-            <h3>Rellene el siguiente formulario y en breve nos estaremos comunicando con usted</h3>
+    <main class="contacto">      
+        <div class="home">         
+            <h1><b>Contacto</b></h1>
+            <h3>Rellene el siguiente formulario y en breve nos estaremos comunicando con usted</h3>           
         </div>
-        <form action="" class="formContacto">           
-            <legend>Informaci&oacute; de contacto </legend>
-            <p class="input-info">
-                <label for="first-name">Nombre:</label>
-                <input  type="text" name="first-name" required>
-            </p> 
-            <p class="input-info">
-                <label for="last-name">Apellido:</label>
-                <input  type="text" name="last-name" required>
-            </p>
-            <p class="input-info">
-                <label for="email">Email:</label>
-                <input  type="text" name="email" required>
-            </p>
-            <p>
-                <label for="comentarios">Comentarios:</label>
-                <br>
-                <textarea name="comentarios" id="" cols="40" rows="10" required=""></textarea>
-            </p>           
-            <button type="submit" class="botonEnviar"> Enviar</button>
-        </form>
-        </div>
+        <div class="container formContacto">
+            <form>           
+                <div class="form-group">
+                    <legend><b>Informaci&oacute; de contacto</b></legend>
+                    <p class="input-info">
+                        <label for="first-name">Nombre:</label>
+                        <input type="text" class="form-control"  name="first-name" required>
+                    </p> 
+                    <p class="input-info">
+                        <label  for="last-name">Apellido:</label>
+                        <input  type="text" class="form-control"  name="last-name" required>
+                    </p>
+                    <p class="input-info">
+                        <label  for="email">Email:</label>
+                        <input  type="email"  class="form-control"name="email" placeholder="name@example.com" required>
+                    </p>
+                    <p>
+                        <label  for="comentarios">Comentarios:</label>
+                        <br>
+                        <textarea class="form-control"  name="comentarios" id="" cols="40" rows="10" required=""></textarea>
+                    </p>           
+                    <button  type="submit" class="botonEnviar"> Enviar</button>
+                </div>
+            </form>
+        </div>        
     </main>
     <!--Footer de la paina-->
     <footer class="footer">
